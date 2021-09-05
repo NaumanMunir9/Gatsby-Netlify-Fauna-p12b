@@ -51,5 +51,6 @@ module.exports = {
         index: `allLinks`,
       },
     },
+    `gatsby-plugin-netlify`,
   ],
 }
