@@ -10,7 +10,7 @@ export default function ShowList({ list, refreshList }) {
       <>
         <h2 className="my-4">Todo List</h2>
 
-        {list.length === 0 && <h3>Loading...</h3>}
+        {list.length === 0 && <h5>Add Todo to Populate!</h5>}
 
         {list &&
           list
@@ -27,7 +27,7 @@ export default function ShowList({ list, refreshList }) {
       <>
         <h2 className="my-4">Archived List</h2>
 
-        {list.length === 0 && <h3>Loading...</h3>}
+        {list.length === 0 && <h5>Click Archive to Populate!</h5>}
 
         {list &&
           list
