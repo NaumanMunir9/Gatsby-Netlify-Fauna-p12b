@@ -1,8 +1,11 @@
+// libraries
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Boostrap 5 Sass Starter`,
-    description: `A simple bootstrap 5 and Sass starter for Gatsby. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@r-ichard`,
+    title: `JAMStack Todo App`,
+    description: `JAMStack Todo App - Gatsby Netlify FaunaDB`,
+    author: `MNM`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-bootstrap-5`,
-        short_name: `gb5-starter`,
+        name: `JAMStack Todo App`,
+        short_name: `jamstack-todo`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -37,5 +40,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-source-faunadb`,
+      options: {
+        // The secret for the key you're using to connect to your Fauna database.
+        // You can generate on of these in the "Security" tab of your Fauna Console.
+        secret: process.env.FAUNADB_SECRET_API_KEY,
+        // The name of the index you want to query
+        // You can create an index in the "Indexes" tab of your Fauna Console.
+        index: `allLinks`,
+      },
+    },
   ],
 }
